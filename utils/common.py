@@ -1,6 +1,6 @@
 from utils.attr_dict import AttrDict
 import numpy as np
-from typing import Callable, List, Optional, Tuple
+from typing import Callable, Dict, List, Optional, Tuple, Union
 import matplotlib.pyplot as plt
 
 
@@ -17,7 +17,7 @@ class OptimizerSettings(AttrDict):
         marker (str): the marker of the plot
         s (int): the size of marker
     """
-    results: np.ndarray
+    results: Union[np.ndarray, Dict[str, np.ndarray]]
     name: str
     color: str
     row: int = 0

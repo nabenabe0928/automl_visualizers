@@ -14,16 +14,14 @@ if __name__ == '__main__':
     The shape of results must be (2, n_configurations).
     """
     n_rows, n_cols = 1, 3
-    vis_settings = VisualizerSettings(minimize=True, n_rows=n_rows, n_cols=n_cols,
-                                      figsize=(10, 4))
+    vis_settings = VisualizerSettings(n_rows=n_rows, n_cols=n_cols,
+                                      figsize=(10, 2), wspace=0.2)
     plot_settings = [[
         SubplotSettings(
             legend=True,
             loc="upper left",
-            labelleft=(c == 0),
-            left=(c == 0),
-            labelbottom=(r == n_rows - 1),
-            bottom=(r == n_rows - 1)
+            xlabel=f"dummy{c % 3}",
+            ylabel=f"dummy{(c + 1) % 3}",
         ) for c in range(n_cols)
     ] for r in range(n_rows)]
 
