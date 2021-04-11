@@ -10,7 +10,6 @@ $ python -m plot_funcs.<target file>
 
 # ToDo
 - visualize the final best pipeline
-- show configs on different budgets (multi-fidelity)
 - analysing the sampling behavior (for 1D or 2D function)
 => multi dimensional scaler (MDS, t-sne) can help you visualize multi dimension
 => extension is to make the animation that adds configuraiton iteratively

@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 from utils.common import (
     Optimizers,
     OptimizerSettings,
-    subplot_setter,
     SubplotSettings,
     VisualizerSettings
 )
@@ -59,5 +58,3 @@ def subplot_iteration_vs_performance(ax: plt.Axes,
                        name=name,
                        minimize=minimize,
                        opt_settings=opt_settings)
-
-    subplot_setter(ax, vis_settings, subplot_settings)

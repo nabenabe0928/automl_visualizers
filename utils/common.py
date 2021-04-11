@@ -15,6 +15,7 @@ class OptimizerSettings(AttrDict):
             the index for the column in subplots
         color (str): the color of the plot
         marker (str): the marker of the plot
+        s (int): the size of marker
     """
     results: np.ndarray
     name: str
@@ -22,6 +23,7 @@ class OptimizerSettings(AttrDict):
     row: int = 0
     col: int = 0
     marker: Optional[str] = None
+    s: Optional[int] = None
 
 
 class VisualizerSettings(AttrDict):
@@ -85,6 +87,9 @@ class SubplotSettings(AttrDict):
             if showing the value for y-axis
         bottom (bool):
             if showing the tick for y-axis
+        loc (str):
+            The location of the legend either of the followings:
+            "upper left", "upper right", "lower left", "lower right"
         xlim (Optional[Tuple[float, float]]):
             the range of x axis
         ylim (Optional[Tuple[float, float]]):
@@ -103,6 +108,7 @@ class SubplotSettings(AttrDict):
     left: bool = True
     labelbottom: bool = True
     bottom: bool = True
+    loc: Optional[str] = None
     xlim: Optional[Tuple[float, float]] = None
     ylim: Optional[Tuple[float, float]] = None
     xlabel: Optional[str] = None
@@ -144,7 +150,7 @@ def subplot_setter(ax: plt.Axes,
     if subplot_settings.ylim is not None:
         ax.set_ylim(subplot_settings.ylim)
     if subplot_settings.legend:
-        ax.legend()
+        ax.legend(loc=subplot_settings.loc)
     if vis_settings.grid:
         ax.grid()
     if subplot_settings.log_scale:
@@ -181,6 +187,8 @@ def plot_target(vis_settings: VisualizerSettings,
                            vis_settings=vis_settings,
                            opts=opts,
                            subplot_settings=subplot_settings)
+
+            subplot_setter(axes[r][c], vis_settings, subplot_settings)
 
     if vis_settings.title is not None:
         plt.title(vis_settings.title)
