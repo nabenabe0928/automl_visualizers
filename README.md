@@ -1,7 +1,16 @@
+# Motivation
+
+# Requirements
+
+# Implementation
+
+```
+$ python -m plot_funcs.<target file>
+```
+
 # ToDo
 - visualize the final best pipeline
 - show configs on different budgets (multi-fidelity)
-- cost over time
 - analysing the sampling behavior (for 1D or 2D function)
 => multi dimensional scaler (MDS, t-sne) can help you visualize multi dimension
 => extension is to make the animation that adds configuraiton iteratively
@@ -9,7 +18,7 @@
 - multi-fidelity checks (low-budget-vs-high-budget 2D scatter to see the correlation)
 - violin-plot for each dimension
 
-
+# Examples
 
 # Times New Roman issues
 
